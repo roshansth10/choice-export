@@ -100,7 +100,7 @@ export default function AboutSummary() {
           <div className="relative mt-6 md:mt-0">
             <div className="relative rounded-2xl md:rounded-3xl overflow-hidden shadow-xl md:shadow-2xl">
               <Image 
-                src="/img/container.jpg" 
+                src="/img/shipment1.jpg" 
                 alt="Choice International Export Team"
                 width={600}
                 height={450}

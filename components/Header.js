@@ -30,9 +30,9 @@ export default function Header() {
   const closeMobileMenu = () => setIsMobileMenuOpen(false);
 
   const navItems = [
-    { name: 'Home', href: '#home' },
+    { name: 'Home', href: '/' },
     { name: 'Services', href: '#services' },
-    { name: 'About', href: '#about' },
+    { name: 'About', href: '/about' },
     { name: 'Contact', href: '#contact' },
   ];
 

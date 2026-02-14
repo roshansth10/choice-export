@@ -1,0 +1,190 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --primary-color: #3b82f6;
+    --secondary-color: #ef4444;
+    --accent-color: #0ea5e9;
+    --dark-color: #1f2937;
+    --light-color: #f9fafb;
+
+    /* global theme variables (light) */
+    --background: 0 0% 100%;
+    --foreground: 222.2 84% 4.9%;
+  }
+
+  /* apply fonts and use theme vars for color/background */
+  html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 80px;
+  }
+
+  body {
+    @apply font-inter;
+    background-color: hsl(var(--background));
+    color: hsl(var(--foreground));
+    background-attachment: fixed;
+    transition: background-color 300ms ease, color 300ms ease;
+  }
+
+  /* Dark theme variables */
+  .dark {
+    --background: 220 12% 6%;
+    --foreground: 210 16% 96%;
+  }
+
+  /* Smooth theme transitions for common elements */
+  body, .card, header, .btn, .btn-primary, .btn-secondary {
+    transition: background-color 300ms ease, color 300ms ease, border-color 300ms ease, box-shadow 300ms ease;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-poppins font-bold;
+  }
+
+  /* Custom scrollbar adaptations */
+  ::-webkit-scrollbar {
+    width: 10px;
+  }
+  ::-webkit-scrollbar-track {
+    @apply bg-gray-100;
+  }
+  ::-webkit-scrollbar-thumb {
+    @apply bg-gradient-to-b from-primary-500 to-primary-700 rounded-full;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    @apply bg-gradient-to-b from-primary-600 to-primary-800;
+  }
+  .dark ::-webkit-scrollbar-track { @apply bg-gray-800; }
+  .dark ::-webkit-scrollbar-thumb { @apply bg-gray-600; }
+}
+
+@layer components {
+  .container-custom {
+    @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+  }
+
+  .section-padding {
+    @apply py-16 md:py-24 lg:py-32;
+  }
+
+  .section-header {
+    @apply text-center max-w-3xl mx-auto mb-12 lg:mb-16;
+  }
+
+  .section-title {
+    @apply text-3xl md:text-4xl lg:text-5xl font-bold mb-4 bg-gradient-to-r from-primary-600 to-accent-600 bg-clip-text text-transparent;
+    position: relative;
+  }
+
+  .section-title::after {
+    content: '';
+    @apply absolute -bottom-3 left-1/2 transform -translate-x-1/2 w-24 h-1.5 bg-gradient-to-r from-primary-500 to-accent-500 rounded-full;
+  }
+
+  .section-subtitle {
+    @apply text-lg md:text-xl text-gray-600;
+  }
+
+  .btn {
+    @apply inline-flex items-center justify-center px-6 py-3 rounded-xl font-semibold transition-all duration-300 transform hover:-translate-y-1 active:translate-y-0 focus:outline-none focus:ring-2 focus:ring-offset-2;
+  }
+
+  .btn-primary {
+    @apply bg-gradient-to-r from-primary-600 to-primary-800 text-white shadow-lg hover:shadow-xl hover:shadow-primary-500/25 focus:ring-primary-500;
+  }
+  .dark .btn-primary {
+    @apply bg-primary-600 hover:bg-primary-700 text-white;
+  }
+
+  .btn-secondary {
+    @apply bg-gradient-to-r from-secondary-500 to-secondary-700 text-white shadow-lg hover:shadow-xl hover:shadow-secondary-500/25 focus:ring-secondary-500;
+  }
+  .dark .btn-secondary {
+    background-color: rgba(255,255,255,0.03);
+    @apply text-secondary-300;
+  }
+
+  .btn-outline {
+    @apply border-2 border-primary-500 text-primary-600 hover:bg-primary-50 focus:ring-primary-500;
+  }
+  .dark .btn-outline {
+    @apply border-primary-400 text-primary-300;
+  }
+
+  .card {
+    @apply bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 border border-gray-100 overflow-hidden;
+  }
+  .dark .card {
+    @apply bg-gray-900 border-gray-800 text-gray-100;
+  }
+
+  .gradient-text {
+    @apply bg-gradient-to-r from-primary-600 to-accent-600 bg-clip-text text-transparent;
+  }
+  .dark .gradient-text {
+    filter: brightness(1.05);
+  }
+
+  .glass-effect {
+    @apply backdrop-blur-lg bg-white/70 border border-white/20 shadow-xl;
+  }
+  .dark .glass-effect {
+    @apply bg-gray-900/60 border-gray-700/40;
+  }
+
+  .floating-element {
+    animation: float 6s ease-in-out infinite;
+  }
+
+  @keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-20px); }
+  }
+
+  .pulse-glow {
+    animation: pulse-glow 2s infinite;
+  }
+
+  @keyframes pulse-glow {
+    0%, 100% { box-shadow: 0 0 20px rgba(59, 130, 246, 0.5); }
+    50% { box-shadow: 0 0 40px rgba(59, 130, 246, 0.8); }
+  }
+
+  /* Animated background pattern */
+  .bg-pattern {
+    background-image: radial-gradient(circle at 1px 1px, rgba(59, 130, 246, 0.1) 1px, transparent 0);
+    background-size: 40px 40px;
+  }
+
+  /* Fast sliding animation for partners slider */
+  @keyframes slide-fast {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(calc(-100% / 2));
+    }
+  }
+
+  .animate-slide {
+    animation: slide-fast 15s linear infinite;
+  }
+}
+/* Add this to your globals.css */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fadeIn {
+  animation: fadeIn 0.5s ease-out;
+}

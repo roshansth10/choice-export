@@ -140,20 +140,14 @@ export default function Contact() {
               <div className="p-4 sm:p-6">
                 <h3 className="text-base sm:text-lg font-bold text-gray-900 mb-3 sm:mb-4">Connect With Us</h3>
                 <div className="flex flex-wrap gap-2 sm:gap-3">
-                  <a href="#" className="w-11 h-11 sm:w-12 sm:h-12 rounded-xl bg-gradient-to-r from-blue-600 to-blue-800 text-white flex items-center justify-center hover:scale-110 transition-transform text-lg sm:text-xl">
+                  <a href="https://www.facebook.com/" target="_blank" className="w-11 h-11 sm:w-12 sm:h-12 rounded-xl bg-gradient-to-r from-blue-600 to-blue-800 text-white flex items-center justify-center hover:scale-110 transition-transform text-lg sm:text-xl">
                     <i className="fab fa-facebook-f"></i>
                   </a>
-                  <a href="#" className="w-11 h-11 sm:w-12 sm:h-12 rounded-xl bg-gradient-to-r from-cyan-500 to-blue-500 text-white flex items-center justify-center hover:scale-110 transition-transform text-lg sm:text-xl">
-                    <i className="fab fa-twitter"></i>
-                  </a>
-                  <a href="#" className="w-11 h-11 sm:w-12 sm:h-12 rounded-xl bg-gradient-to-r from-blue-700 to-blue-900 text-white flex items-center justify-center hover:scale-110 transition-transform text-lg sm:text-xl">
-                    <i className="fab fa-linkedin-in"></i>
-                  </a>
-                  <a href="#" className="w-11 h-11 sm:w-12 sm:h-12 rounded-xl bg-gradient-to-r from-pink-500 to-rose-600 text-white flex items-center justify-center hover:scale-110 transition-transform text-lg sm:text-xl">
-                    <i className="fab fa-instagram"></i>
-                  </a>
-                  <a href="https://wa.me/9779841052081" className="w-11 h-11 sm:w-12 sm:h-12 rounded-xl bg-gradient-to-r from-green-500 to-emerald-600 text-white flex items-center justify-center hover:scale-110 transition-transform text-lg sm:text-xl">
+                  <a href="https://wa.me/9779841052081" target="_blank"  className="w-11 h-11 sm:w-12 sm:h-12 rounded-xl bg-gradient-to-r from-green-500 to-emerald-600 text-white flex items-center justify-center hover:scale-110 transition-transform text-lg sm:text-xl">
                     <i className="fab fa-whatsapp"></i>
+                  </a>
+                  <a href="https://www.tiktok.com/en/" target="_blank" className="w-11 h-11 sm:w-12 sm:h-12 rounded-xl bg-gradient-to-r from-white to-red-600 text-black flex items-center justify-center hover:scale-110 transition-transform text-lg sm:text-xl">
+                    <i className="fab fa-tiktok"></i>
                   </a>
                 </div>
               </div>

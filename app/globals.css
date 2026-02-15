@@ -188,3 +188,5 @@
 .animate-fadeIn {
   animation: fadeIn 0.5s ease-out;
 }
+
+/* Add to your existing globals.css */

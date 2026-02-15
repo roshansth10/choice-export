@@ -1,18 +1,17 @@
-'use client';
+"use client";
+// components/AboutHero.js
 
 import Image from 'next/image';
 
 export default function AboutHero() {
   return (
     <section className="relative pt-16 pb-16 md:pt-20 md:pb-20 overflow-hidden bg-gradient-to-b from-white via-primary-50/30 to-white">
-      {/* Simple Elegant Background */}
-      <div className="absolute inset-0 -z-10">
-        <div className="absolute top-0 left-0 w-full h-40 bg-gradient-to-b from-primary-100/40 to-transparent"></div>
-        <div className="absolute bottom-0 right-0 w-full h-40 bg-gradient-to-t from-accent-100/40 to-transparent"></div>
-      </div>
+      {/* Base gradient overlay */}
+      <div className="absolute top-0 left-0 w-full h-40 bg-gradient-to-b from-primary-100/40 to-transparent"></div>
+      <div className="absolute bottom-0 right-0 w-full h-40 bg-gradient-to-t from-accent-100/40 to-transparent"></div>
       
       <div className="container-custom relative z-10">
-        {/* Page Title Section */}
+        {/* ... rest of your component remains unchanged ... */}
         <div className="mb-12 md:mb-16">
           <nav className="flex items-center space-x-2 text-sm text-primary-600 mb-6">
             <a href="/" className="hover:text-primary-700 transition">Home</a>

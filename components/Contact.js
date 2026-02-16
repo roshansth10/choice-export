@@ -1,5 +1,8 @@
 'use client';
-
+import { FaInstagram } from "react-icons/fa";
+import { FaTiktok } from "react-icons/fa";
+import { FaFacebook} from "react-icons/fa";
+import { FaWhatsapp } from "react-icons/fa";
 import { useState } from 'react';
 
 export default function Contact() {
@@ -140,15 +143,46 @@ export default function Contact() {
               <div className="p-4 sm:p-6">
                 <h3 className="text-base sm:text-lg font-bold text-gray-900 mb-3 sm:mb-4">Connect With Us</h3>
                 <div className="flex flex-wrap gap-2 sm:gap-3">
-                  <a href="https://www.facebook.com/" target="_blank" className="w-11 h-11 sm:w-12 sm:h-12 rounded-xl bg-gradient-to-r from-blue-600 to-blue-800 text-white flex items-center justify-center hover:scale-110 transition-transform text-lg sm:text-xl">
-                    <i className="fab fa-facebook-f"></i>
-                  </a>
-                  <a href="https://wa.me/9779841052081" target="_blank"  className="w-11 h-11 sm:w-12 sm:h-12 rounded-xl bg-gradient-to-r from-green-500 to-emerald-600 text-white flex items-center justify-center hover:scale-110 transition-transform text-lg sm:text-xl">
-                    <i className="fab fa-whatsapp"></i>
-                  </a>
-                  <a href="https://www.tiktok.com/en/" target="_blank" className="w-11 h-11 sm:w-12 sm:h-12 rounded-xl bg-gradient-to-r from-white to-red-600 text-black flex items-center justify-center hover:scale-110 transition-transform text-lg sm:text-xl">
-                    <i className="fab fa-tiktok"></i>
-                  </a>
+                  {/* Facebook */}
+<a
+  href="https://www.facebook.com/"
+  target="_blank"
+  rel="noopener noreferrer"
+  className="w-11 h-11 sm:w-12 sm:h-12 rounded-xl bg-gradient-to-tr from-blue-500 to-blue-700 text-white flex items-center justify-center hover:scale-110 transition-transform"
+>
+  <FaFacebook />
+</a>
+
+{/* Instagram */}
+<a
+  href="https://www.instagram.com/"
+  target="_blank"
+  rel="noopener noreferrer"
+  className="w-11 h-11 sm:w-12 sm:h-12 rounded-xl bg-gradient-to-tr from-yellow-400 via-pink-500 to-purple-600 text-white flex items-center justify-center hover:scale-110 transition-transform"
+>
+  <FaInstagram />
+</a>
+
+{/* WhatsApp */}
+<a
+  href="https://wa.me/9863486932"
+  target="_blank"
+  rel="noopener noreferrer"
+  className="w-11 h-11 sm:w-12 sm:h-12 rounded-xl bg-gradient-to-tr from-green-400 to-emerald-600 text-white flex items-center justify-center hover:scale-110 transition-transform"
+>
+  <FaWhatsapp />
+</a>
+
+{/* TikTok */}
+<a
+  href="https://www.tiktok.com/"
+  target="_blank"
+  rel="noopener noreferrer"
+  className="w-11 h-11 sm:w-12 sm:h-12 rounded-xl bg-gradient-to-tr from-black via-gray-800 to-gray-900 text-white flex items-center justify-center hover:scale-110 transition-transform"
+>
+  <FaTiktok />
+</a>
+
                 </div>
               </div>
             </div>

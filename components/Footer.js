@@ -46,7 +46,7 @@ export default function Footer() {
               <a href="https://www.facebook.com" target="_blank"   className="w-10 h-10 rounded-lg bg-gray-800 hover:bg-primary-600 text-white flex items-center justify-center transition-colors text-lg">
                 <i className="fab fa-facebook-f"></i>
               </a>
-              <a href="https://wa.me/9779841052081" target="_blank"   className="w-10 h-10 rounded-lg bg-gray-800 hover:bg-primary-600 text-white flex items-center justify-center transition-colors text-lg">
+              <a href="https://wa.me/9863486932" target="_blank"   className="w-10 h-10 rounded-lg bg-gray-800 hover:bg-primary-600 text-white flex items-center justify-center transition-colors text-lg">
                 <i className="fab fa-whatsapp"></i>
               </a>
               <a href="https://www.tiktok.com/en/" target="_blank"  className="w-10 h-10 rounded-lg bg-gray-800 hover:bg-primary-600 text-white flex items-center justify-center transition-colors text-lg">

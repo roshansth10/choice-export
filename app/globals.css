@@ -85,7 +85,7 @@
   }
 
   .section-subtitle {
-    @apply text-lg md:text-xl text-gray-600;
+    @apply text-lg md:text-xl text-gray-600 dark:text-gray-300;
   }
 
   .btn {
@@ -115,10 +115,7 @@
   }
 
   .card {
-    @apply bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 border border-gray-100 overflow-hidden;
-  }
-  .dark .card {
-    @apply bg-gray-900 border-gray-800 text-gray-100;
+    @apply bg-white dark:bg-gray-800 rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 border border-gray-100 dark:border-gray-700 overflow-hidden;
   }
 
   .gradient-text {
@@ -129,10 +126,7 @@
   }
 
   .glass-effect {
-    @apply backdrop-blur-lg bg-white/70 border border-white/20 shadow-xl;
-  }
-  .dark .glass-effect {
-    @apply bg-gray-900/60 border-gray-700/40;
+    @apply backdrop-blur-lg bg-white/70 dark:bg-gray-900/70 border border-white/20 dark:border-gray-700/40 shadow-xl;
   }
 
   .floating-element {
@@ -173,7 +167,7 @@
     animation: slide-fast 15s linear infinite;
   }
 }
-/* Add this to your globals.css */
+
 @keyframes fadeIn {
   from {
     opacity: 0;
@@ -188,5 +182,3 @@
 .animate-fadeIn {
   animation: fadeIn 0.5s ease-out;
 }
-
-/* Add to your existing globals.css */

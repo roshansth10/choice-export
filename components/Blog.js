@@ -29,17 +29,17 @@ export default function Blog() {
   ];
 
   return (
-    <section id="blog" className="section-padding bg-light-bg">
+    <section id="blog" className="section-padding bg-gray-50 dark:bg-gray-900">
       <div className="container-custom">
         <div className="section-header">
           <span className="section-label">Our Blog</span>
           <h2 className="section-title">Latest News & Insights</h2>
-          <p className="section-subtitle">Stay updated with the latest trends in logistics and export</p>
+          <p className="section-subtitle dark:text-gray-300">Stay updated with the latest trends in logistics and export</p>
         </div>
 
         <div className="blog-grid grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
           {blogPosts.map((post, index) => (
-            <article key={index} className="blog-card bg-white rounded-xl shadow-custom overflow-hidden transition-all hover:-translate-y-2 hover:shadow-custom-hover">
+            <article key={index} className="blog-card bg-white dark:bg-gray-800 rounded-xl shadow-lg overflow-hidden transition-all hover:-translate-y-2 hover:shadow-xl">
               <div className="blog-image relative h-64 overflow-hidden">
                 <Image
                   src={post.image}
@@ -47,12 +47,12 @@ export default function Blog() {
                   fill
                   className="object-cover transition-transform hover:scale-105"
                 />
-                <span className="blog-category absolute top-5 left-5 bg-primary text-white px-4 py-1.5 rounded-full text-xs font-semibold uppercase">
+                <span className="blog-category absolute top-5 left-5 bg-primary-600 text-white px-4 py-1.5 rounded-full text-xs font-semibold uppercase">
                   {post.category}
                 </span>
               </div>
               <div className="blog-content p-6">
-                <div className="blog-meta flex gap-4 text-lighter-text text-sm mb-4">
+                <div className="blog-meta flex gap-4 text-gray-500 dark:text-gray-400 text-sm mb-4">
                   <span className="flex items-center gap-1">
                     <i className="far fa-calendar"></i> {post.date}
                   </span>
@@ -60,11 +60,11 @@ export default function Blog() {
                     <i className="far fa-clock"></i> {post.readTime}
                   </span>
                 </div>
-                <h3 className="text-xl font-semibold text-dark mb-4 leading-tight">
+                <h3 className="text-xl font-semibold text-gray-900 dark:text-white mb-4 leading-tight">
                   {post.title}
                 </h3>
-                <p className="text-light-text mb-6">{post.description}</p>
-                <a href="#" className="text-primary font-semibold inline-flex items-center gap-2 hover:text-secondary">
+                <p className="text-gray-600 dark:text-gray-400 mb-6">{post.description}</p>
+                <a href="#" className="text-primary-600 dark:text-primary-400 font-semibold inline-flex items-center gap-2 hover:text-secondary-500">
                   Read Full Article <i className="fas fa-arrow-right"></i>
                 </a>
               </div>

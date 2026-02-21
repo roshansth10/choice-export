@@ -1,17 +1,22 @@
+import Header from '@/components/Header';
 import AboutHero from '@/components/AboutHero';
 import MissionVision from '@/components/MissionVision';
 import WhyChooseUs from '@/components/WhyChooseUs';
-import Contact from '@/components/Contact';
 import Footer from '@/components/Footer';
+import BackToTop from '@/components/BackToTop';
 
 export default function AboutPage() {
   return (
     <div className="min-h-screen">
-      <AboutHero />
-      <MissionVision />
-      <WhyChooseUs />
-      <Contact />
+      <Header />
+      <main>
+        <AboutHero />
+        <MissionVision />
+        <WhyChooseUs />
+      </main>
       <Footer />
+      
+      <BackToTop />
     </div>
   );
 }

@@ -26,6 +26,17 @@ export default function Home() {
       </main>
       <Footer />
       
+      {/* WhatsApp Button - Only on Home Page */}
+      <a
+        href="https://wa.me/9779863466932"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="fixed bottom-8 right-8 z-50 w-16 h-16 bg-gradient-to-r from-green-500 to-green-600 text-white rounded-full flex items-center justify-center text-2xl shadow-2xl hover:shadow-3xl hover:scale-110 transition-all duration-300 animate-bounce-slow"
+        aria-label="Chat on WhatsApp"
+      >
+        <i className="fab fa-whatsapp"></i>
+      </a>
+      
       <BackToTop />
     </div>
   );

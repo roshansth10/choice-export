@@ -23,13 +23,13 @@ export default function PartnersSlider() {
   ];
 
   return (
-    <section className="py-12 md:py-16 bg-gradient-to-r from-gray-50 to-white/50 overflow-hidden">
+    <section className="py-12 md:py-16 bg-gray-50 dark:bg-gray-900 overflow-hidden">
       <div className="container-custom">
         <div className={`text-center mb-8 md:mb-12 transition-all duration-1000 ${
           isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
         }`}>
           <h2 className="section-title mb-3 sm:mb-4 text-3xl sm:text-4xl lg:text-5xl">Trusted by Global Leaders</h2>
-          <p className="text-base sm:text-lg text-gray-600 max-w-2xl mx-auto px-4">
+          <p className="text-base sm:text-lg text-gray-600 dark:text-gray-300 max-w-2xl mx-auto px-4">
             Partnering with world's leading logistics providers for seamless global coverage
           </p>
         </div>
@@ -37,8 +37,8 @@ export default function PartnersSlider() {
         {/* Infinite Slider Container */}
         <div className="relative overflow-hidden py-6 md:py-8">
           {/* Gradient Overlays */}
-          <div className="absolute left-0 top-0 bottom-0 w-16 sm:w-24 md:w-32 bg-gradient-to-r from-gray-50 to-transparent z-10"></div>
-          <div className="absolute right-0 top-0 bottom-0 w-16 sm:w-24 md:w-32 bg-gradient-to-l from-white/50 to-transparent z-10"></div>
+          <div className="absolute left-0 top-0 bottom-0 w-16 sm:w-24 md:w-32 bg-gradient-to-r from-gray-50 dark:from-gray-900 to-transparent z-10"></div>
+          <div className="absolute right-0 top-0 bottom-0 w-16 sm:w-24 md:w-32 bg-gradient-to-l from-white/50 dark:from-gray-800 to-transparent z-10"></div>
           
           {/* Slider Track */}
           <div className="flex animate-slide space-x-4 sm:space-x-6 md:space-x-8">

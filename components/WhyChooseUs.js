@@ -40,11 +40,11 @@ export default function WhyChooseUs() {
   ];
 
   return (
-    <section className="section-padding bg-gradient-to-r from-gray-50 to-white/50">
+    <section className="section-padding bg-gray-50 dark:bg-gray-900">
       <div className="container-custom">
         <div className="section-header">
           <h2 className="section-title">Why Choose Choice International Export?</h2>
-          <p className="section-subtitle">
+          <p className="section-subtitle dark:text-gray-300">
             Discover what sets us apart as Nepal's leading logistics provider
           </p>
         </div>
@@ -57,8 +57,8 @@ export default function WhyChooseUs() {
                 <div className={`w-14 h-14 rounded-xl bg-gradient-to-br ${reason.color} flex items-center justify-center mb-4`}>
                   <i className={`${reason.icon} text-white text-xl`}></i>
                 </div>
-                <h3 className="text-xl font-bold text-gray-900 mb-3">{reason.title}</h3>
-                <p className="text-gray-600">{reason.description}</p>
+                <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-3">{reason.title}</h3>
+                <p className="text-gray-600 dark:text-gray-300">{reason.description}</p>
               </div>
             </div>
           ))}
@@ -67,7 +67,7 @@ export default function WhyChooseUs() {
         {/* CTA */}
         <div className="mt-12 text-center">
           <div className="glass-effect inline-block px-8 py-6 rounded-2xl shadow-xl">
-            <p className="text-lg text-gray-700 mb-4">
+            <p className="text-lg text-gray-700 dark:text-gray-200 mb-4">
               <span className="font-bold gradient-text">Ready to experience premium logistics?</span>{' '}
               Join thousands of satisfied clients
             </p>

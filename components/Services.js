@@ -92,15 +92,15 @@ export default function Services() {
   ];
 
   return (
-    <section id="services" className="section-padding relative overflow-hidden">
+    <section id="services" className="section-padding relative overflow-hidden bg-gray-50 dark:bg-gray-900">
       {/* Background Elements */}
-      <div className="absolute -top-40 -right-40 w-80 h-80 bg-primary-100 rounded-full mix-blend-multiply filter blur-3xl opacity-30 -z-10"></div>
-      <div className="absolute -bottom-40 -left-40 w-80 h-80 bg-accent-100 rounded-full mix-blend-multiply filter blur-3xl opacity-30 -z-10"></div>
+      <div className="absolute -top-40 -right-40 w-80 h-80 bg-primary-100 dark:bg-primary-900 rounded-full mix-blend-multiply filter blur-3xl opacity-30 -z-10"></div>
+      <div className="absolute -bottom-40 -left-40 w-80 h-80 bg-accent-100 dark:bg-accent-900 rounded-full mix-blend-multiply filter blur-3xl opacity-30 -z-10"></div>
       
       <div className="container-custom relative z-10">
         <div className="section-header">
           <h2 className="section-title">Our Services</h2>
-          <p className="section-subtitle">
+          <p className="section-subtitle dark:text-gray-300">
             End-to-end shipping and export services tailored to your specific needs
           </p>
         </div>
@@ -128,22 +128,22 @@ export default function Services() {
                   </div>
 
                   {/* Service Info */}
-                  <h3 className="text-base sm:text-xl font-bold text-gray-900 mb-2 sm:mb-3 group-hover:gradient-text transition-all duration-300">
+                  <h3 className="text-base sm:text-xl font-bold text-gray-900 dark:text-white mb-2 sm:mb-3 group-hover:gradient-text transition-all duration-300">
                     {service.name}
                   </h3>
                   
-                  <p className="text-sm sm:text-base text-gray-600 mb-3 sm:mb-4 line-clamp-2">
+                  <p className="text-sm sm:text-base text-gray-600 dark:text-gray-300 mb-3 sm:mb-4 line-clamp-2">
                     {service.description}
                   </p>
 
                   {/* Features */}
                   <div className="mb-4 sm:mb-6">
                     <div className="flex items-center mb-2">
-                      <span className="text-xs sm:text-sm font-semibold text-gray-700">Key Features:</span>
+                      <span className="text-xs sm:text-sm font-semibold text-gray-700 dark:text-gray-300">Key Features:</span>
                     </div>
                     <ul className="space-y-1">
                       {service.features.map((feature, idx) => (
-                        <li key={idx} className="flex items-center text-xs sm:text-sm text-gray-600">
+                        <li key={idx} className="flex items-center text-xs sm:text-sm text-gray-600 dark:text-gray-400">
                           <i className={`fas fa-check text-xs mr-2 flex-shrink-0 ${featureColorClass}`}></i>
                           <span className="line-clamp-1">{feature}</span>
                         </li>
@@ -168,7 +168,7 @@ export default function Services() {
         {/* Service Summary */}
         <div className="mt-16 text-center">
           <div className="glass-effect inline-block px-8 py-4 rounded-2xl shadow-xl">
-            <p className="text-lg text-gray-700">
+            <p className="text-lg text-gray-700 dark:text-gray-200">
               <span className="font-bold gradient-text">Not sure which service you need?</span>{' '}
               Contact our experts for personalized recommendations
             </p>

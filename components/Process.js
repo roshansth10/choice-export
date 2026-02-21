@@ -45,11 +45,11 @@ export default function Process() {
   ];
 
   return (
-    <section id="process" className="section-padding bg-gradient-to-b from-gray-50 to-white">
+    <section id="process" className="section-padding bg-gray-50 dark:bg-gray-900">
       <div className="container-custom">
         <div className="section-header">
           <h2 className="section-title">Our Shipping Process</h2>
-          <p className="section-subtitle">
+          <p className="section-subtitle dark:text-gray-300">
             Simple, transparent, and efficient shipping from start to finish
           </p>
         </div>
@@ -76,8 +76,8 @@ export default function Process() {
                     </div>
                     
                     {/* Step Content */}
-                    <h3 className="text-lg font-bold text-gray-900 mb-2">{step.title}</h3>
-                    <p className="text-gray-600 text-sm">{step.description}</p>
+                    <h3 className="text-lg font-bold text-gray-900 dark:text-white mb-2">{step.title}</h3>
+                    <p className="text-gray-600 dark:text-gray-400 text-sm">{step.description}</p>
                     
                     {/* Connector for mobile */}
                     {index < steps.length - 1 && (
@@ -95,10 +95,10 @@ export default function Process() {
         {/* Process CTA */}
         <div className="mt-16 text-center">
           <div className="glass-effect inline-block px-8 py-8 rounded-2xl shadow-2xl max-w-2xl">
-            <h3 className="text-2xl font-bold text-gray-900 mb-4">
+            <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-4">
               Ready to Start Your Shipment?
             </h3>
-            <p className="text-gray-600 mb-6">
+            <p className="text-gray-600 dark:text-gray-300 mb-6">
               Get a free quote and expert consultation for your specific shipping needs
             </p>
             <a 

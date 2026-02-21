@@ -9,7 +9,7 @@ export default function Hero() {
   }, []);
 
   return (
-    <section id="home" className="relative pt-24 pb-12 md:pt-40 md:pb-20 lg:pt-32 lg:pb-28 overflow-hidden">
+    <section id="home" className="relative pt-24 pb-12 md:pt-40 md:pb-20 lg:pt-32 lg:pb-28 overflow-hidden bg-gray-50 dark:bg-gray-900">
       {/* Background Pattern */}
       <div className="absolute inset-0 bg-pattern -z-10"></div>
       
@@ -21,17 +21,17 @@ export default function Hero() {
         <div className="grid lg:grid-cols-2 gap-8 md:gap-12 items-center">
           {/* Hero Content */}
           <div className="text-center lg:text-left">
-            <div className="inline-flex items-center px-3 sm:px-4 py-2 bg-gradient-to-r from-primary-100 to-accent-100 rounded-full mb-4 sm:mb-6">
+            <div className="inline-flex items-center px-3 sm:px-4 py-2 bg-gradient-to-r from-primary-100 dark:from-primary-900 to-accent-100 dark:to-accent-900 rounded-full mb-4 sm:mb-6">
               <span className="w-2 h-2 bg-gradient-to-r from-primary-600 to-accent-600 rounded-full mr-2 animate-pulse"></span>
               <span className="text-xs sm:text-sm font-semibold gradient-text">Trusted Since 2010</span>
             </div>
             
-            <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold mb-4 sm:mb-6">
+            <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold mb-4 sm:mb-6 text-gray-900 dark:text-white">
               <span className="block">Premium Global</span>
               <span className="gradient-text">Logistics Solutions</span>
             </h1>
             
-            <p className="text-base sm:text-lg md:text-xl text-gray-600 mb-6 sm:mb-8 max-w-2xl mx-auto lg:mx-0">
+            <p className="text-base sm:text-lg md:text-xl text-gray-600 dark:text-gray-300 mb-6 sm:mb-8 max-w-2xl mx-auto lg:mx-0">
               Experience world-class international shipping and export services from Nepal to global destinations. 
               Fast, secure, and reliable logistics solutions tailored to your needs.
             </p>
@@ -40,15 +40,15 @@ export default function Hero() {
             <div className="grid grid-cols-3 gap-3 sm:gap-6 mb-6 sm:mb-8">
               <div className="text-center">
                 <div className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold gradient-text mb-1 sm:mb-2">50000+</div>
-                <p className="text-xs sm:text-sm text-gray-600">Clients Served</p>
+                <p className="text-xs sm:text-sm text-gray-600 dark:text-gray-400">Clients Served</p>
               </div>
               <div className="text-center">
                 <div className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold gradient-text mb-1 sm:mb-2">99.7%</div>
-                <p className="text-xs sm:text-sm text-gray-600">On-Time Delivery</p>
+                <p className="text-xs sm:text-sm text-gray-600 dark:text-gray-400">On-Time Delivery</p>
               </div>
               <div className="text-center">
                 <div className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold gradient-text mb-1 sm:mb-2">80+</div>
-                <p className="text-xs sm:text-sm text-gray-600">Countries Covered</p>
+                <p className="text-xs sm:text-sm text-gray-600 dark:text-gray-400">Countries Covered</p>
               </div>
             </div>
 
@@ -95,7 +95,7 @@ export default function Hero() {
                 </div>
                 <div className="min-w-0">
                   <h4 className="font-bold text-gray-900 dark:text-white text-sm sm:text-base">Door-to-Door</h4>
-                  <p className="text-xs sm:text-sm text-gray-600 dark:text-white whitespace-nowrap">Complete Delivery</p>
+                  <p className="text-xs sm:text-sm text-gray-600 dark:text-gray-300 whitespace-nowrap">Complete Delivery</p>
                 </div>
               </div>
             </div>
@@ -107,7 +107,7 @@ export default function Hero() {
                 </div>
                 <div className="min-w-0">
                   <h4 className="font-bold text-gray-900 dark:text-white text-sm sm:text-base">24/7 Tracking</h4>
-                  <p className="text-xs sm:text-sm text-gray-600 dark:text-white whitespace-nowrap">Real-Time Updates</p>
+                  <p className="text-xs sm:text-sm text-gray-600 dark:text-gray-300 whitespace-nowrap">Real-Time Updates</p>
                 </div>
               </div>
             </div>

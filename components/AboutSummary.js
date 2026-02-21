@@ -34,30 +34,30 @@ export default function AboutSummary() {
   ];
 
   return (
-    <section id="aboutsummary" className="section-padding relative overflow-hidden">
+    <section id="aboutsummary" className="section-padding relative overflow-hidden bg-gray-50 dark:bg-gray-900">
       {/* Background Elements */}
-      <div className="absolute -top-40 -right-40 w-80 h-80 bg-primary-100 rounded-full mix-blend-multiply filter blur-3xl opacity-30 -z-10"></div>
-      <div className="absolute -bottom-40 -left-40 w-80 h-80 bg-accent-100 rounded-full mix-blend-multiply filter blur-3xl opacity-30 -z-10"></div>
+      <div className="absolute -top-40 -right-40 w-80 h-80 bg-primary-100 dark:bg-primary-900 rounded-full mix-blend-multiply filter blur-3xl opacity-30 -z-10"></div>
+      <div className="absolute -bottom-40 -left-40 w-80 h-80 bg-accent-100 dark:bg-accent-900 rounded-full mix-blend-multiply filter blur-3xl opacity-30 -z-10"></div>
       
       <div className="container-custom relative z-10">
         <div className="grid lg:grid-cols-2 gap-6 md:gap-8 lg:gap-12 items-center">
           {/* Content */}
           <div>
-            <span className="inline-block px-3 sm:px-4 py-2 bg-gradient-to-r from-primary-100 to-accent-100 rounded-full text-xs sm:text-sm font-semibold text-primary-600 mb-4 md:mb-6">
+            <span className="inline-block px-3 sm:px-4 py-2 bg-gradient-to-r from-primary-100 dark:from-primary-900 to-accent-100 dark:to-accent-900 rounded-full text-xs sm:text-sm font-semibold text-primary-600 dark:text-primary-300 mb-4 md:mb-6">
               ABOUT OUR COMPANY
             </span>
             
-            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900 mb-4 md:mb-6">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-4 md:mb-6">
               Your Trusted Partner in <span className="gradient-text">Global Logistics</span>
             </h2>
             
-            <p className="text-sm sm:text-base text-gray-600 mb-3 md:mb-4 leading-relaxed">
+            <p className="text-sm sm:text-base text-gray-600 dark:text-gray-300 mb-3 md:mb-4 leading-relaxed">
               Founded in 2010, Choice International Export has established itself as Nepal's leading 
               international shipping and logistics provider. We specialize in connecting businesses 
               and individuals with reliable, efficient, and secure global shipping solutions.
             </p>
             
-            <p className="text-sm sm:text-base text-gray-600 mb-4 md:mb-6 leading-relaxed">
+            <p className="text-sm sm:text-base text-gray-600 dark:text-gray-300 mb-4 md:mb-6 leading-relaxed">
               Our mission is to simplify international trade by providing comprehensive logistics 
               services that are tailored to meet the unique needs of each client.
             </p>
@@ -70,8 +70,8 @@ export default function AboutSummary() {
                     <i className={`${feature.icon} text-white text-base md:text-lg`}></i>
                   </div>
                   <div className="min-w-0">
-                    <h4 className="font-semibold text-gray-900 mb-1 text-sm md:text-base">{feature.title}</h4>
-                    <p className="text-xs md:text-sm text-gray-600 line-clamp-2">{feature.description}</p>
+                    <h4 className="font-semibold text-gray-900 dark:text-white mb-1 text-sm md:text-base">{feature.title}</h4>
+                    <p className="text-xs md:text-sm text-gray-600 dark:text-gray-400 line-clamp-2">{feature.description}</p>
                   </div>
                 </div>
               ))}
@@ -114,8 +114,8 @@ export default function AboutSummary() {
             <div className="hidden md:block absolute -bottom-6 -left-6 glass-effect p-4 md:p-6 rounded-2xl shadow-2xl w-56 md:w-64">
               <div className="text-center">
                 <div className="text-3xl md:text-4xl font-bold gradient-text mb-2">50000+</div>
-                <p className="text-gray-700 font-semibold text-sm md:text-base">Successful Shipments</p>
-                <div className="w-full bg-gray-200 rounded-full h-2 mt-2">
+                <p className="text-gray-700 dark:text-gray-200 font-semibold text-sm md:text-base">Successful Shipments</p>
+                <div className="w-full bg-gray-200 dark:bg-gray-700 rounded-full h-2 mt-2">
                   <div className="bg-gradient-to-r from-primary-500 to-accent-500 h-2 rounded-full w-full"></div>
                 </div>
               </div>
@@ -138,19 +138,19 @@ export default function AboutSummary() {
         <div className="mt-10 md:mt-16 glass-effect rounded-2xl p-6 md:p-8 grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6 shadow-xl">
           <div className="text-center">
             <div className="text-2xl sm:text-3xl md:text-4xl font-bold gradient-text mb-1 md:mb-2">13+</div>
-            <p className="text-xs sm:text-sm text-gray-600">Years Experience</p>
+            <p className="text-xs sm:text-sm text-gray-600 dark:text-gray-300">Years Experience</p>
           </div>
           <div className="text-center">
             <div className="text-2xl sm:text-3xl md:text-4xl font-bold gradient-text mb-1 md:mb-2">80+</div>
-            <p className="text-xs sm:text-sm text-gray-600">Countries Served</p>
+            <p className="text-xs sm:text-sm text-gray-600 dark:text-gray-300">Countries Served</p>
           </div>
           <div className="text-center">
             <div className="text-2xl sm:text-3xl md:text-4xl font-bold gradient-text mb-1 md:mb-2">50+</div>
-            <p className="text-xs sm:text-sm text-gray-600">Global Partners</p>
+            <p className="text-xs sm:text-sm text-gray-600 dark:text-gray-300">Global Partners</p>
           </div>
           <div className="text-center">
             <div className="text-2xl sm:text-3xl md:text-4xl font-bold gradient-text mb-1 md:mb-2">99.7%</div>
-            <p className="text-xs sm:text-sm text-gray-600">Client Satisfaction</p>
+            <p className="text-xs sm:text-sm text-gray-600 dark:text-gray-300">Client Satisfaction</p>
           </div>
         </div>
       </div>

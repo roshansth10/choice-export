@@ -18,13 +18,13 @@ export default function Header() {
         setIsHidden(false);
       }
       
-      lastScrollY.current = currentScrollY;
+      setLastScrollY(currentScrollY);
     };
 
     window.addEventListener('scroll', handleScroll, { passive: true });
     
     return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
+  }, [lastScrollY]);
 
   useEffect(() => {
     try {
@@ -51,9 +51,9 @@ export default function Header() {
 
   const navItems = [
     { name: 'Home', href: '/' },
-    { name: 'Services', href: '/#services' },
+    { name: 'Services', href: '#services' },
     { name: 'About', href: '/about' },
-    { name: 'Contact', href: '/#contact' },
+    { name: 'Contact', href: '#contact' },
   ];
 
   return (
@@ -153,4 +153,11 @@ export default function Header() {
       </div>
     </header>
   );
-}
+} 
+// In components/Header.js, update the navItems array:
+const navItems = [
+  { name: 'Home', href: '/' },
+  { name: 'About Us', href: '/about' }, // Changed from #about to /about
+  { name: 'Services', href: '#services' },
+  // ... other items
+];

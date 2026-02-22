@@ -1,30 +1,30 @@
 'use client';
 
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 
 export default function Header() {
   const [isDark, setIsDark] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isHidden, setIsHidden] = useState(false);
-  const [lastScrollY, setLastScrollY] = useState(0);
+  const lastScrollY = useRef(0);
 
   useEffect(() => {
     const handleScroll = () => {
       const currentScrollY = window.scrollY;
       
-      if (currentScrollY > lastScrollY && currentScrollY > 100) {
+      if (currentScrollY > lastScrollY.current && currentScrollY > 100) {
         setIsHidden(true);
       } else {
         setIsHidden(false);
       }
       
-      setLastScrollY(currentScrollY);
+      lastScrollY.current = currentScrollY;
     };
 
     window.addEventListener('scroll', handleScroll, { passive: true });
     
     return () => window.removeEventListener('scroll', handleScroll);
-  }, [lastScrollY]);
+  }, []);
 
   useEffect(() => {
     try {
@@ -51,13 +51,13 @@ export default function Header() {
 
   const navItems = [
     { name: 'Home', href: '/' },
-    { name: 'Services', href: '#services' },
+    { name: 'Services', href: '/#services' },
     { name: 'About', href: '/about' },
-    { name: 'Contact', href: '#contact' },
+    { name: 'Contact', href: '/#contact' },
   ];
 
   return (
-    <header className="fixed top-0 w-full z-50 bg-white dark:bg-gray-800 shadow">
+    <header className={`fixed top-0 w-full z-50 bg-white dark:bg-gray-800 shadow transition-transform duration-300 ease-in-out ${isHidden ? '-translate-y-full' : 'translate-y-0'}`}>
       <div className="container-custom py-4">
         <div className="flex items-center justify-between">
           <div className="flex items-center gap-2 sm:gap-4 flex-shrink-0">
@@ -153,11 +153,4 @@ export default function Header() {
       </div>
     </header>
   );
-} 
-// In components/Header.js, update the navItems array:
-const navItems = [
-  { name: 'Home', href: '/' },
-  { name: 'About Us', href: '/about' }, // Changed from #about to /about
-  { name: 'Services', href: '#services' },
-  // ... other items
-];
+}

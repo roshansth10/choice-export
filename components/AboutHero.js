@@ -14,9 +14,7 @@ export default function AboutHero() {
         {/* Breadcrumb */}
         <div className="mb-12 md:mb-16">
           <nav className="flex items-center space-x-2 text-sm text-primary-600 dark:text-primary-400 mb-6">
-            <a href="/" className="hover:text-primary-700 dark:hover:text-primary-300 transition">Home</a>
-            <i className="fas fa-chevron-right text-xs"></i>
-            <span className="text-gray-700 dark:text-gray-300 font-semibold">About Us</span>
+           
           </nav>
           
           <div className="max-w-4xl">

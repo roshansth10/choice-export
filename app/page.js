@@ -8,7 +8,6 @@ import WhyChooseUs from '@/components/WhyChooseUs';
 import Testimonials from '@/components/Testimonials';
 import Contact from '@/components/Contact';
 import Footer from '@/components/Footer';
-import BackToTop from '@/components/BackToTop';
 
 export default function Home() {
   return (
@@ -36,8 +35,6 @@ export default function Home() {
       >
         <i className="fab fa-whatsapp"></i>
       </a>
-      
-      <BackToTop />
     </div>
   );
 }

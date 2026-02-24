@@ -57,7 +57,13 @@ export default function Header() {
   ];
 
   return (
-    <header className={`fixed top-0 w-full z-50 bg-white dark:bg-gray-800 shadow transition-transform duration-300 ease-in-out ${isHidden ? '-translate-y-full' : 'translate-y-0'}`}>
+    <header 
+      className="fixed top-0 w-full z-50 bg-white dark:bg-gray-800 shadow"
+      style={{
+        transform: isHidden ? 'translateY(-100%)' : 'translateY(0)',
+        transition: 'transform 0.3s ease-in-out'
+      }}
+    >
       <div className="container-custom py-4">
         <div className="flex items-center justify-between">
           <div className="flex items-center gap-2 sm:gap-4 flex-shrink-0">

@@ -25,20 +25,31 @@ export default function BackToTop() {
     });
   };
 
+  if (!isVisible) return null;
+
   return (
     <button
       id="backToTop"
       onClick={scrollToTop}
-      className={`fixed bottom-28 right-8 z-50 group ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4 pointer-events-none'}`}
+      className="fixed bottom-20 right-8 z-50 group"
       aria-label="Back to top"
+      style={{
+        width: '48px',
+        height: '48px',
+        borderRadius: '50%',
+        background: 'linear-gradient(135deg, #3b82f6, #1d4ed8)',
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'center',
+        boxShadow: '0 4px 14px rgba(59, 130, 246, 0.5)',
+        border: '2px solid rgba(255,255,255,0.3)',
+        cursor: 'pointer',
+        transition: 'all 0.3s ease'
+      }}
     >
-      <div className="w-14 h-14 bg-gradient-to-br from-primary-600 to-primary-800 rounded-full flex items-center justify-center shadow-xl shadow-primary-500/30 group-hover:shadow-primary-500/50 transition-all duration-300 group-hover:-translate-y-1">
-        <div className="w-10 h-10 bg-white/20 rounded-full flex items-center justify-center backdrop-blur-sm">
-          <i className="fas fa-arrow-up text-white text-sm font-bold"></i>
-        </div>
-      </div>
-      {/* Animated ring effect */}
-      <div className="absolute inset-0 w-14 h-14 bg-primary-600 rounded-full opacity-30 animate-ping"></div>
+      <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={3}>
+        <path strokeLinecap="round" strokeLinejoin="round" d="M5 15l7-7 7 7" />
+      </svg>
     </button>
   );
 }

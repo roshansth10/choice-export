@@ -6,9 +6,10 @@ import Services from '@/components/Services';
 import Process from '@/components/Process';
 import WhyChooseUs from '@/components/WhyChooseUs';
 import Testimonials from '@/components/Testimonials';
+
 import Contact from '@/components/Contact';
 import Footer from '@/components/Footer';
-import BackToTop from '@/components/BackToTop';
+import WhatsAppButton from '@/components/WhatsAppButton';
 
 export default function Home() {
   return (
@@ -25,9 +26,10 @@ export default function Home() {
         <Contact />
       </main>
       <Footer />
-      
-      {/* Back to Top Button - moved to WhatsApp button position */}
-      <BackToTop />
+
+      {/* WhatsApp floating button */}
+      <WhatsAppButton />
     </div>
   );
 }
+

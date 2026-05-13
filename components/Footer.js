@@ -14,9 +14,11 @@ export default function Footer() {
   const quickLinks = [
     { name: 'Home', href: '#home', icon: 'fas fa-home' },
     { name: 'Services', href: '#services', icon: 'fas fa-shipping-fast' },
-    { name: 'About', href: '#about', icon: 'fas fa-info-circle' },
+    { name: 'About', href: '/about', icon: 'fas fa-info-circle' },
     { name: 'Process', href: '#process', icon: 'fas fa-cogs' },
     { name: 'Testimonials', href: '#testimonials', icon: 'fas fa-comments' },
+    { name: 'Blog', href: '/blog', icon: 'fas fa-newspaper' },
+
     { name: 'Contact', href: '#contact', icon: 'fas fa-envelope' },
   ];
 
@@ -38,7 +40,7 @@ export default function Footer() {
       <div className="container-custom relative z-10">
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8 mb-8 lg:mb-12">
           <div className="lg:col-span-1">
-            <div className="flex items-center justify-center lg:justify-start mb-4">
+            <a href="/" className="flex items-center justify-center lg:justify-start mb-4 hover:opacity-80 transition-opacity">
               <img
                 src="/img/1logo.png"
                 alt="Choice International"
@@ -48,7 +50,7 @@ export default function Footer() {
                 <h3 className="text-base sm:text-xl font-bold">Choice International Export</h3>
                 <p className="text-gray-400 text-xs sm:text-sm">Premium Global Logistics</p>
               </div>
-            </div>
+            </a>
             <p className="text-gray-400 text-sm mb-4 sm:mb-6">
               Your trusted partner for world-class international shipping and logistics solutions from Nepal to global destinations.
             </p>

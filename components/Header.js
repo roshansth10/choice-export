@@ -53,6 +53,8 @@ export default function Header() {
     { name: 'Home', href: '/' },
     { name: 'Services', href: '/#services' },
     { name: 'About', href: '/about' },
+    { name: 'Blog', href: '/blog' },
+
     { name: 'Contact', href: '/#contact' },
   ];
 
@@ -66,10 +68,10 @@ export default function Header() {
     >
       <div className="container-custom py-4">
         <div className="flex items-center justify-between">
-          <div className="flex items-center gap-2 sm:gap-4 flex-shrink-0">
+          <a href="/" className="flex items-center gap-2 sm:gap-4 flex-shrink-0 hover:opacity-80 transition-opacity">
             <img src="/img/1logo.png" alt="Choice International" className="h-10 w-auto rounded-md" />
             <div className="text-sm sm:text-lg md:text-xl font-bold text-gray-800 dark:text-gray-100 truncate">Choice International Export</div>
-          </div>
+          </a>
 
           {/* Desktop Navigation */}
           <nav className="hidden lg:flex items-center space-x-6">

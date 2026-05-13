@@ -3,7 +3,7 @@ import AboutHero from '@/components/AboutHero';
 import MissionVision from '@/components/MissionVision';
 import WhyChooseUs from '@/components/WhyChooseUs';
 import Footer from '@/components/Footer';
-import BackToTop from '@/components/BackToTop';
+import WhatsAppButton from '@/components/WhatsAppButton';
 
 export default function AboutPage() {
   return (
@@ -16,7 +16,7 @@ export default function AboutPage() {
       </main>
       <Footer />
       
-      <BackToTop />
+      <WhatsAppButton />
     </div>
   );
 }

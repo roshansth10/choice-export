@@ -30,7 +30,7 @@ export default function RootLayout({ children }) {
       <head>
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
-        <link rel="icon" type="image/x-icon" href="/img/logo.jpg" />
+        <link rel="icon" type="image/png" href="/img/1logo.png" />
         <script dangerouslySetInnerHTML={{ __html: `(function(){try{const t=localStorage.getItem('theme');if(t==='dark'){document.documentElement.classList.add('dark');} }catch(e){} })()` }} />
       </head>
       <body className="min-h-screen relative">

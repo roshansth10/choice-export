@@ -17,8 +17,6 @@ export default function Footer() {
     { name: 'About', href: '/about', icon: 'fas fa-info-circle' },
     { name: 'Process', href: '#process', icon: 'fas fa-cogs' },
     { name: 'Testimonials', href: '#testimonials', icon: 'fas fa-comments' },
-    { name: 'Blog', href: '/blog', icon: 'fas fa-newspaper' },
-
     { name: 'Contact', href: '#contact', icon: 'fas fa-envelope' },
   ];
 

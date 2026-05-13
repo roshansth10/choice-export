@@ -4,6 +4,7 @@ import { FaTiktok } from "react-icons/fa";
 import { FaFacebook} from "react-icons/fa";
 import { FaWhatsapp } from "react-icons/fa";
 import { useState } from 'react';
+import emailjs from '@emailjs/browser';
 
 export default function Contact() {
   const [formData, setFormData] = useState({
@@ -31,15 +32,27 @@ export default function Contact() {
     setSubmitStatus(null);
 
     try {
-      // Simulate API call
-      await new Promise(resolve => setTimeout(resolve, 1500));
-      
-      // In a real application, you would send the data to your backend
-      console.log('Form submitted:', formData);
+      // EmailJS configuration
+      const serviceId = 'YOUR_SERVICE_ID'; // Replace with your EmailJS service ID
+      const templateId = 'YOUR_TEMPLATE_ID'; // Replace with your EmailJS template ID
+      const publicKey = 'YOUR_PUBLIC_KEY'; // Replace with your EmailJS public key
+
+      // Prepare email data
+      const emailData = {
+        from_name: formData.name,
+        from_email: formData.email,
+        phone: formData.phone,
+        service: formData.service,
+        message: formData.message,
+        to_email: 'choiceinternationalexport@gmail.com'
+      };
+
+      // Send email using EmailJS
+      await emailjs.send(serviceId, templateId, emailData, publicKey);
       
       setSubmitStatus({
         type: 'success',
-        message: 'Thank you! Your message has been sent. We will contact you within 24 hours.'
+        message: 'Thank you! Your message has been sent successfully. We will contact you within 24 hours.'
       });
       
       // Reset form
@@ -51,9 +64,10 @@ export default function Contact() {
         message: ''
       });
     } catch (error) {
+      console.error('Email sending failed:', error);
       setSubmitStatus({
         type: 'error',
-        message: 'Something went wrong. Please try again or contact us directly.'
+        message: 'Failed to send message. Please try again or contact us directly at choiceinternationalexport@gmail.com'
       });
     } finally {
       setIsSubmitting(false);
@@ -145,7 +159,7 @@ export default function Contact() {
                 <div className="flex flex-wrap gap-2 sm:gap-3">
                   {/* Facebook */}
                   <a
-                    href="https://www.facebook.com/"
+                    href="https://www.facebook.com/share/1FqGXR4MUx/?mibextid=wwXIfr"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="w-11 h-11 sm:w-12 sm:h-12 rounded-xl bg-gradient-to-tr from-blue-500 to-blue-700 text-white flex items-center justify-center hover:scale-110 transition-transform"
@@ -155,7 +169,7 @@ export default function Contact() {
 
                   {/* Instagram */}
                   <a
-                    href="https://www.instagram.com/"
+                    href="https://www.instagram.com/choiceexport/"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="w-11 h-11 sm:w-12 sm:h-12 rounded-xl bg-gradient-to-tr from-yellow-400 via-pink-500 to-purple-600 text-white flex items-center justify-center hover:scale-110 transition-transform"
@@ -175,7 +189,7 @@ export default function Contact() {
 
                   {/* TikTok */}
                   <a
-                    href="https://www.tiktok.com/"
+                    href="https://www.tiktok.com/@choiceexport?_r=1&_t=ZS-96HwO1s4qwM"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="w-11 h-11 sm:w-12 sm:h-12 rounded-xl bg-gradient-to-tr from-black via-gray-800 to-gray-900 text-white flex items-center justify-center hover:scale-110 transition-transform"

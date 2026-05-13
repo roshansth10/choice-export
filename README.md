@@ -1,16 +1,76 @@
-# React + Vite
+# Contact Form Setup Instructions
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This project now includes a working contact form that can send emails directly from the frontend using EmailJS.
 
-Currently, two official plugins are available:
+## How It Works
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+The contact form uses **EmailJS** to send emails without requiring a backend server. This is a frontend-only solution that works by:
 
-## React Compiler
+1. Collecting form data (name, email, phone, service, message)
+2. Sending the data to EmailJS service via their API
+3. EmailJS delivers the email to your Gmail address
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## Setup Required
 
-## Expanding the ESLint configuration
+To make the contact form work, you need to configure EmailJS:
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+### 1. Create EmailJS Account
+- Go to [EmailJS.com](https://www.emailjs.com/)
+- Sign up for a free account
+- Verify your email address
+
+### 2. Set Up Email Service
+- In your EmailJS dashboard, go to "Email Services"
+- Add a new service (choose Gmail)
+- Connect your Gmail account by following the OAuth flow
+- Verify the connection
+
+### 3. Create Email Template
+- Go to "Email Templates" in your dashboard
+- Create a new template
+- Use these variables in your template:
+  - `{{from_name}}` - Sender's name
+  - `{{from_email}}` - Sender's email
+  - `{{phone}}` - Phone number
+  - `{{service}}` - Service requested
+  - `{{message}}` - Message content
+  - `{{to_email}}` - Your email address
+
+### 4. Update Configuration
+Replace the placeholder values in `components/Contact.js`:
+
+```javascript
+const serviceId = 'YOUR_SERVICE_ID'; // Replace with your EmailJS service ID
+const templateId = 'YOUR_TEMPLATE_ID'; // Replace with your EmailJS template ID
+const publicKey = 'YOUR_PUBLIC_KEY'; // Replace with your EmailJS public key
+```
+
+You can find these values in your EmailJS dashboard:
+- Service ID: In "Email Services" section
+- Template ID: In "Email Templates" section
+- Public Key: In "Account" > "API Keys" section
+
+## Testing
+
+1. Run the development server: `npm run dev`
+2. Navigate to the contact form
+3. Fill in the form and submit
+4. Check your Gmail for the received message
+
+## Benefits of This Solution
+
+✅ **No Backend Required** - Works entirely from frontend
+✅ **Free Tier Available** - EmailJS offers free plan with 200 emails/month
+✅ **Secure** - No sensitive credentials in frontend code
+✅ **Reliable** - Professional email delivery service
+✅ **Easy Setup** - Simple configuration process
+
+## Alternative Options
+
+If you prefer not to use EmailJS, other frontend-only email services include:
+- FormSubmit
+- Formspree
+- Netlify Forms
+- Getform
+
+However, EmailJS is recommended for its ease of use and Gmail integration.

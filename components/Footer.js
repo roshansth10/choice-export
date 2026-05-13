@@ -1,4 +1,16 @@
+'use client';
+
+import { useState } from 'react';
+import PolicyModal from './PolicyModal';
+
 export default function Footer() {
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [policyType, setPolicyType] = useState('privacy');
+
+  const openPolicyModal = (type) => {
+    setPolicyType(type);
+    setIsModalOpen(true);
+  };
   const quickLinks = [
     { name: 'Home', href: '#home', icon: 'fas fa-home' },
     { name: 'Services', href: '#services', icon: 'fas fa-shipping-fast' },
@@ -19,21 +31,19 @@ export default function Footer() {
 
   return (
     <footer className="bg-gradient-to-br from-gray-900 to-gray-950 text-white pt-16 pb-8 relative overflow-hidden">
-      {/* Background Pattern */}
       <div className="absolute inset-0 opacity-5 bg-pattern"></div>
-      
-      {/* Gradient Orbs */}
       <div className="absolute -top-20 -left-20 w-64 h-64 bg-gradient-to-r from-primary-500/10 to-accent-500/10 rounded-full blur-3xl"></div>
       <div className="absolute -bottom-20 -right-20 w-64 h-64 bg-gradient-to-r from-secondary-500/10 to-pink-500/10 rounded-full blur-3xl"></div>
 
       <div className="container-custom relative z-10">
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8 mb-8 lg:mb-12">
-          {/* Company Info */}
-          <div>
-            <div className="flex items-start sm:items-center space-x-2 sm:space-x-3 mb-4 sm:mb-6">
-              <div className="w-10 h-10 sm:w-12 sm:h-12 bg-gradient-to-r from-primary-600 to-accent-600 rounded-xl flex items-center justify-center flex-shrink-0">
-                <i className="fas fa-globe-americas text-white text-lg sm:text-xl"></i>
-              </div>
+          <div className="lg:col-span-1">
+            <div className="flex items-center justify-center lg:justify-start mb-4">
+              <img
+                src="/img/1logo.png"
+                alt="Choice International"
+                className="h-12 w-auto rounded-md mr-3"
+              />
               <div className="min-w-0">
                 <h3 className="text-base sm:text-xl font-bold">Choice International Export</h3>
                 <p className="text-gray-400 text-xs sm:text-sm">Premium Global Logistics</p>
@@ -43,19 +53,21 @@ export default function Footer() {
               Your trusted partner for world-class international shipping and logistics solutions from Nepal to global destinations.
             </p>
             <div className="flex space-x-3">
-              <a href="https://www.facebook.com" target="_blank"   className="w-10 h-10 rounded-lg bg-gray-800 hover:bg-primary-600 text-white flex items-center justify-center transition-colors text-lg">
+              <a href="https://www.facebook.com/share/1FqGXR4MUx/?mibextid=wwXIfr" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-lg bg-gray-800 hover:bg-primary-600 text-white flex items-center justify-center transition-colors text-lg">
                 <i className="fab fa-facebook-f"></i>
               </a>
-              <a href="https://wa.me/9863486932" target="_blank"   className="w-10 h-10 rounded-lg bg-gray-800 hover:bg-primary-600 text-white flex items-center justify-center transition-colors text-lg">
+              <a href="https://wa.me/9863486932" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-lg bg-gray-800 hover:bg-primary-600 text-white flex items-center justify-center transition-colors text-lg">
                 <i className="fab fa-whatsapp"></i>
               </a>
-              <a href="https://www.tiktok.com/en/" target="_blank"  className="w-10 h-10 rounded-lg bg-gray-800 hover:bg-primary-600 text-white flex items-center justify-center transition-colors text-lg">
+              <a href="https://www.tiktok.com/@choiceexport?_r=1&_t=ZS-96HwO1s4qwM" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-lg bg-gray-800 hover:bg-primary-600 text-white flex items-center justify-center transition-colors text-lg">
                 <i className="fab fa-tiktok"></i>
+              </a>
+              <a href="https://www.instagram.com/choiceexport/" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-lg bg-gray-800 hover:bg-primary-600 text-white flex items-center justify-center transition-colors text-lg">
+                <i className="fab fa-instagram"></i>
               </a>
             </div>
           </div>
 
-          {/* Quick Links */}
           <div>
             <h4 className="text-base sm:text-lg font-bold mb-4 sm:mb-6 relative inline-block">
               Quick Links
@@ -64,10 +76,7 @@ export default function Footer() {
             <ul className="space-y-2 sm:space-y-3">
               {quickLinks.map((link, index) => (
                 <li key={index}>
-                  <a
-                    href={link.href}
-                    className="flex items-center text-gray-400 hover:text-white transition-colors group text-sm sm:text-base"
-                  >
+                  <a href={link.href} className="flex items-center text-gray-400 hover:text-white transition-colors group text-sm sm:text-base">
                     <i className={`${link.icon} text-primary-500 mr-2 sm:mr-3 flex-shrink-0 group-hover:translate-x-1 transition-transform`}></i>
                     {link.name}
                   </a>
@@ -76,7 +85,6 @@ export default function Footer() {
             </ul>
           </div>
 
-          {/* Services */}
           <div>
             <h4 className="text-base sm:text-lg font-bold mb-4 sm:mb-6 relative inline-block">
               Our Services
@@ -85,10 +93,7 @@ export default function Footer() {
             <ul className="space-y-2 sm:space-y-3">
               {serviceLinks.map((service, index) => (
                 <li key={index}>
-                  <a
-                    href={service.href}
-                    className="flex items-center text-gray-400 hover:text-white transition-colors group text-sm sm:text-base"
-                  >
+                  <a href={service.href} className="flex items-center text-gray-400 hover:text-white transition-colors group text-sm sm:text-base">
                     <i className="fas fa-chevron-right text-primary-500 text-xs mr-2 sm:mr-3 group-hover:translate-x-1 transition-transform flex-shrink-0"></i>
                     <span className="line-clamp-1">{service.name}</span>
                   </a>
@@ -97,7 +102,6 @@ export default function Footer() {
             </ul>
           </div>
 
-          {/* Contact & Newsletter */}
           <div>
             <h4 className="text-base sm:text-lg font-bold mb-4 sm:mb-6 relative inline-block">
               Contact Info
@@ -139,26 +143,25 @@ export default function Footer() {
           </div>
         </div>
 
-        {/* Divider */}
         <div className="h-px bg-gradient-to-r from-transparent via-gray-700 to-transparent my-6 lg:my-8"></div>
 
-        {/* Copyright */}
         <div className="flex flex-col sm:flex-row justify-between items-center text-gray-400 text-xs sm:text-sm gap-4">
           <p className="text-center sm:text-left">
             &copy; {new Date().getFullYear()} Choice International Export. All rights reserved.
           </p>
           <div className="flex flex-wrap justify-center gap-3 sm:gap-6 text-xs sm:text-sm">
-            <a href="#" className="hover:text-white transition-colors">Privacy Policy</a>
-            <a href="#" className="hover:text-white transition-colors">Terms & Conditions</a>
-            <a href="#" className="hover:text-white transition-colors">Shipping Policy</a>
+            <button onClick={() => openPolicyModal('privacy')} className="hover:text-white transition-colors">Privacy Policy</button>
+            <button onClick={() => openPolicyModal('terms')} className="hover:text-white transition-colors">Terms & Conditions</button>
+            <button onClick={() => openPolicyModal('shipping')} className="hover:text-white transition-colors">Shipping Policy</button>
           </div>
         </div>
-
-        {/* Attribution */}
-        <div className="text-center mt-6 lg:mt-8 pt-6 lg:pt-8 border-t border-gray-800 text-gray-500 text-xs">
-          <p>Designed with <i className="fas fa-heart text-red-500 mx-1"></i> for seamless global logistics</p>
-        </div>
       </div>
+
+      <PolicyModal 
+        isOpen={isModalOpen} 
+        onClose={() => setIsModalOpen(false)} 
+        policyType={policyType} 
+      />
     </footer>
   );
 }

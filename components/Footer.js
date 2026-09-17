@@ -145,10 +145,25 @@ export default function Footer() {
 
         <div className="h-px bg-gradient-to-r from-transparent via-gray-700 to-transparent my-6 lg:my-8"></div>
 
-        <div className="flex flex-col sm:flex-row justify-between items-center text-gray-400 text-xs sm:text-sm gap-4">
-          <p className="text-center sm:text-left">
+        <div className="flex flex-col md:flex-row justify-between items-center text-gray-400 text-xs sm:text-sm gap-4">
+          <p className="text-center md:text-left">
             &copy; {new Date().getFullYear()} Choice International Export. All rights reserved.
           </p>
+
+          <a
+            href="https://dxcreativestudio.vercel.app"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex items-center gap-2 group hover:text-white transition-colors"
+          >
+            <span>Developed by</span>
+            <img
+              src="/img/dx-studio-white.png"
+              alt="DX Studio"
+              className="h-6 sm:h-7 w-auto object-contain transition-transform group-hover:scale-105"
+            />
+          </a>
+
           <div className="flex flex-wrap justify-center gap-3 sm:gap-6 text-xs sm:text-sm">
             <button onClick={() => openPolicyModal('privacy')} className="hover:text-white transition-colors">Privacy Policy</button>
             <button onClick={() => openPolicyModal('terms')} className="hover:text-white transition-colors">Terms & Conditions</button>

@@ -158,9 +158,14 @@ export default function Footer() {
           >
             <span>Developed by</span>
             <img
+              src="/img/dx-studio.png"
+              alt="DX Studio"
+              className="h-6 sm:h-7 w-auto object-contain transition-transform group-hover:scale-105 dark:hidden"
+            />
+            <img
               src="/img/dx-studio-white.png"
               alt="DX Studio"
-              className="h-6 sm:h-7 w-auto object-contain transition-transform group-hover:scale-105"
+              className="hidden h-6 sm:h-7 w-auto object-contain transition-transform group-hover:scale-105 dark:block"
             />
           </a>
 

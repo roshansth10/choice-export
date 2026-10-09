@@ -1,12 +1,33 @@
 'use client';
 
-import { useEffect, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 
 export default function PartnersSlider() {
   const [isVisible, setIsVisible] = useState(false);
+  const trackRef = useRef(null);
 
   useEffect(() => {
     setIsVisible(true);
+  }, []);
+
+  useEffect(() => {
+    const track = trackRef.current;
+    if (!track) return undefined;
+
+    const updateDuration = () => {
+      const segmentWidth = track.scrollWidth / 3;
+      const speed = window.matchMedia('(max-width: 767px)').matches ? 60 : 80;
+      track.style.setProperty('--marquee-duration', `${segmentWidth / speed}s`);
+    };
+
+    updateDuration();
+    const observer = new ResizeObserver(updateDuration);
+    observer.observe(track);
+    window.addEventListener('resize', updateDuration);
+    return () => {
+      observer.disconnect();
+      window.removeEventListener('resize', updateDuration);
+    };
   }, []);
 
   const partners = [
@@ -28,7 +49,7 @@ export default function PartnersSlider() {
         <div className={`text-center mb-8 md:mb-12 transition-all duration-1000 ${
           isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
         }`}>
-          <h2 className="section-title mb-3 sm:mb-4 text-3xl sm:text-4xl lg:text-5xl">Trusted by Global Leaders</h2>
+          <h2 className="section-title partners-heading mb-3 sm:mb-4 text-3xl sm:text-4xl lg:text-5xl">Trusted by Global Leaders</h2>
           <p className="text-base sm:text-lg text-gray-600 dark:text-gray-300 max-w-2xl mx-auto px-4">
             Partnering with world's leading logistics providers for seamless global coverage
           </p>
@@ -41,25 +62,29 @@ export default function PartnersSlider() {
           <div className="absolute right-0 top-0 bottom-0 w-16 sm:w-24 md:w-32 bg-gradient-to-l from-white/50 dark:from-gray-800 to-transparent z-10"></div>
           
           {/* Slider Track */}
-          <div className="flex animate-slide space-x-4 sm:space-x-6 md:space-x-8">
-            {[...partners, ...partners].map((partner, index) => (
-              <div 
-                key={index} 
-                className="flex-shrink-0"
+          <div ref={trackRef} className="flex w-max partners-marquee">
+            {[0, 1, 2].map((copy) => (
+              <div
+                key={copy}
+                className="flex flex-none items-center gap-4 pr-4 sm:gap-6 sm:pr-6 md:gap-8 md:pr-8"
+                aria-hidden={copy > 0}
               >
-                <div className="group relative">
-                  <div className={`w-40 h-28 sm:w-48 sm:h-32 md:w-56 md:h-40 ${partner.image ? 'bg-transparent' : `bg-gradient-to-br ${partner.color}`} rounded-2xl p-4 sm:p-6 flex flex-col items-center justify-center shadow-lg transition-all duration-500 group-hover:scale-105 group-hover:shadow-xl`}>
-                    {partner.image ? (
-                      <img src={partner.image} alt={partner.name} className="w-16 h-10 sm:w-20 sm:h-12 object-contain mb-2 sm:mb-3" />
-                    ) : (
-                      <i className={`${partner.icon} text-white text-2xl sm:text-3xl mb-2 sm:mb-3`}></i>
-                    )}
-                    <span className="font-bold text-center gradient-text dark:text-white text-sm sm:text-base md:text-lg">{partner.name}</span>
+                {partners.map((partner) => (
+                  <div key={`${copy}-${partner.name}`} className="flex-shrink-0">
+                    <div className="group relative">
+                      <div className={`w-40 h-28 sm:w-48 sm:h-32 md:w-56 md:h-40 ${partner.image ? 'bg-transparent' : `bg-gradient-to-br ${partner.color}`} rounded-2xl p-4 sm:p-6 flex flex-col items-center justify-center shadow-lg transition-all duration-500 group-hover:scale-105 group-hover:shadow-xl`}>
+                        {partner.image ? (
+                          <img src={partner.image} alt={copy === 0 ? partner.name : ''} className="w-16 h-10 sm:w-20 sm:h-12 object-contain mb-2 sm:mb-3" />
+                        ) : (
+                          <i className={`${partner.icon} text-white text-2xl sm:text-3xl mb-2 sm:mb-3`}></i>
+                        )}
+                        <span className="font-bold text-center gradient-text dark:text-white text-sm sm:text-base md:text-lg">{partner.name}</span>
+                      </div>
+
+                      <div className="absolute inset-0 bg-gradient-to-br from-white/20 to-transparent rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                    </div>
                   </div>
-                  
-                  {/* Hover Effect */}
-                  <div className="absolute inset-0 bg-gradient-to-br from-white/20 to-transparent rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                </div>
+                ))}
               </div>
             ))}
           </div>

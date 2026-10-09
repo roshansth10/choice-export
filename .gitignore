@@ -22,3 +22,7 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+
+# Local environment variables; keep the documented example tracked.
+.env*
+!.env.example

@@ -153,18 +153,49 @@
     background-size: 40px 40px;
   }
 
-  /* Fast sliding animation for partners slider */
   @keyframes slide-fast {
     0% {
       transform: translateX(0);
     }
     100% {
-      transform: translateX(calc(-100% / 2));
+      transform: translateX(-33.333333%);
     }
   }
 
-  .animate-slide {
-    animation: slide-fast 15s linear infinite;
+  .partners-marquee {
+    animation: slide-fast var(--marquee-duration, 30s) linear infinite;
+    will-change: transform;
+  }
+
+  @media (hover: hover) and (min-width: 768px) {
+    .partners-marquee:hover {
+      animation-play-state: paused;
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .partners-marquee {
+      animation: none;
+      will-change: auto;
+    }
+  }
+}
+
+.overflow-wrap-anywhere {
+  overflow-wrap: anywhere;
+}
+
+@media (min-width: 481px) and (max-width: 1023px) {
+  .contact-info-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 767px) {
+  h2.partners-heading {
+    white-space: nowrap;
+    font-size: clamp(1rem, 4.7vw, 2rem);
+    letter-spacing: -0.035em;
   }
 }
 
